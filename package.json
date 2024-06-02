@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "electron-dev": "concurrently \"npm run dev\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-dev": "concurrently \"npm run dev --turbo\" \"wait-on http://localhost:3000 && electron .\"",
     "electron-pack": "electron-builder"
   },
   "build": {
@@ -19,26 +19,22 @@
     "directories": {
       "buildResources": "assets"
     }
-  },  
+  },
   "dependencies": {
-    "next": "14.2.3",
-    "next-auth": "^4.24.7",
-    "react": "^18",
-    "react-dom": "^18"
+    "autoprefixer": "^9.8.8",
+    "next": "^14.2.3",
+    "next-auth": "^4.0.0",
+    "postcss": "^7.0.39",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10.4.19",
-    "concurrently": "^8.2.2",
+    "@types/react": "18.3.3",
+    "@types/tailwindcss": "^3.1.0",
+    "concurrently": "^7.0.0",
     "electron": "^30.0.9",
-    "electron-builder": "^24.13.3",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.3",
-    "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.3",
-    "typescript": "^5",
+    "electron-builder": "^24.0.0",
     "wait-on": "^7.2.0"
   }
 }
