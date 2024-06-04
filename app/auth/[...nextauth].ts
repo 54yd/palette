@@ -8,6 +8,7 @@ export const authOptions = {
       clientSecret: process.env.GITHUB_CLIENT_SECRET!,
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async redirect({ url, baseUrl }: { url: string; baseUrl: string }) {
       if (url.startsWith('/')) return `${baseUrl}${url}`;
