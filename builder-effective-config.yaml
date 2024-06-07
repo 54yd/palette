@@ -1,0 +1,15 @@
+directories:
+  output: dist
+  buildResources: assets
+appId: com.github.client
+files:
+  - filter:
+      - build/**/*
+      - node_modules/**/*
+      - package.json
+      - main.js
+      - preload.js
+      - next/**/*
+mac:
+  target: dmg
+electronVersion: 30.1.0

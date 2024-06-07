@@ -1,0 +1,13 @@
+appId: com.github.client
+files:
+  - build/**
+  - node_modules/**
+  - package.json
+  - main.js
+  - preload.js
+  - next/**
+directories:
+  buildResources: assets
+mac:
+  target:
+    - dmg

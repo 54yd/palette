@@ -41,9 +41,7 @@
     "**/*.ts",
     "**/*.tsx",
     "types/tailwindcss.d.ts",
-    ".next/types/**/*.ts",
-    "app/page.test.jsx",
-    "app/page.test.jsx"
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

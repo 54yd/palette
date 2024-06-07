@@ -1,31 +1,41 @@
-import React, { useCallback } from 'react';
-import { useDropzone } from 'react-dropzone';
-import { parseTextAndCreateFiles } from '../utils/fileCreator';
+'use client'
+import React, { useState } from 'react';
+import { Upload, Button } from 'antd';
+import { UploadOutlined } from '@ant-design/icons';
+import { parseText } from '../utils/parser';
+import { saveFiles } from '../utils/fileHandler';
 
 const DropZone = () => {
-  const onDrop = useCallback((acceptedFiles: File[]) => {
-    const file = acceptedFiles[0];
+  const [parsedData, setParsedData] = useState<Record<string, { path: string, content: string }> | null>(null);
+
+  const handleUpload = (file: File) => {
     const reader = new FileReader();
-
-    reader.onload = async (event) => {
+    reader.onload = (event) => {
       const text = event.target?.result as string;
-      await parseTextAndCreateFiles(text);
+      const parsed = parseText(text);
+      setParsedData(parsed);
     };
-
     reader.readAsText(file);
-  }, []);
+    return false; // Prevent automatic upload
+  };
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+  const handleSaveFiles = async () => {
+    if (parsedData) {
+      await saveFiles(parsedData);
+    }
+  };
 
   return (
-    <div {...getRootProps()} className="border-dashed border-4 border-gray-600 p-6 rounded-md">
-      <input {...getInputProps()} />
-      {isDragActive ? (
-        <p>Drop the files here...</p>
-      ) : (
-        <p>Drag & drop some files here, or click to select files</p>
+    <>
+      <Upload beforeUpload={handleUpload} multiple={false} showUploadList={false}>
+        <Button icon={<UploadOutlined />}>Click to Upload</Button>
+      </Upload>
+      {parsedData && (
+        <Button onClick={handleSaveFiles} type="primary" style={{ marginTop: '20px' }}>
+          Save Files
+        </Button>
       )}
-    </div>
+    </>
   );
 };
 

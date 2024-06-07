@@ -6,22 +6,29 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
+    "export":"next export",
     "electron-dev": "concurrently \"npm run dev --turbo\" \"wait-on http://localhost:3000 && electron .\"",
     "electron-pack": "electron-builder",
+    "postinstall": "npm run build && electron-builder install-app-deps",
     "test": "jest",
     "test:watch": "jest --watch"
   },
   "main": "main.js",
   "license": "MIT",
   "dependencies": {
+    "@ant-design/icons": "^5.3.7",
     "@ant-design/nextjs-registry": "^1.0.0",
     "antd": "^5.18.0",
     "autoprefixer": "^10.4.19",
-    "next": "^14.2.3",
+    "babel-plugin-react-compiler": "^0.0.0-experimental-938cd9a-20240601",
+    "framer-motion": "^11.2.10",
+    "fs": "^0.0.1-security",
+    "next": "^15.0.0-rc.0",
     "next-auth": "^4.0.0",
     "postcss": "^8.4.38",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react": "^19.0.0-rc.0",
+    "react-dom": "^19.0.0-rc.0",
+    "react-dropzone": "^14.2.3",
     "tailwindcss": "^3.4.3"
   },
   "devDependencies": {
@@ -29,6 +36,7 @@
     "@testing-library/react": "^15.0.7",
     "@testing-library/user-event": "^14.5.2",
     "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.2",
     "@types/react": "18.3.3",
     "@types/react-dropzone": "^5.1.0",
     "@types/tailwindcss": "^3.1.0",
@@ -48,10 +56,16 @@
     "files": [
       "build/**/*",
       "node_modules/**/*",
-      "package.json"
+      "package.json",
+      "main.js",
+      "preload.js",
+      "next/**/*"
     ],
     "directories": {
       "buildResources": "assets"
+    },
+    "mac": {
+      "target": "dmg"
     }
   }
 }

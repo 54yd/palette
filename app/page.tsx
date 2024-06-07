@@ -1,28 +1,20 @@
-import '../styles/globals.css';
+
 import React from 'react';
-import LoginPage from './login';
+import { Suspense } from 'react'
 
-import{ Card,Space }from "antd"
-;
-import { Header } from 'antd/es/layout/layout';
-;
-export default function HomePage() {
+import LoginPage from '@/app/login';
+import UploadPage from '@/app/upload';
+import DropZone from '@/components/DropZone';
+
+
+export default function Page() {
   return (
-    <Card style={{ width: 'auto', margin: '30px',padding: 'auto',  }}>
-    <Header className="text-center min-h-screen text-white overflow-hidden">
-      <div className="text-center px-3 bg-gray-200">
-          <div className="p-5">
-          <Card className="text-left text-3xl font-bold bg-blue-600" >
-            HEADER
-          </Card>
-          </div>
-          <Card className="text-3xl font-bold">
-            <LoginPage/>
-          </Card>
-
-      </div>
-    </Header>
-    </Card>
     
+    <>
+    <Suspense fallback={<div>Loading...</div>}>
+      <UploadPage />
+      <LoginPage />
+    </Suspense>
+    </>
   );
 }
