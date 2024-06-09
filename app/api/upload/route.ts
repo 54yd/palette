@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import { join } from 'path';
-import { parseText } from '../../../utils/parser';
+import { parseText } from '../../../_components/utils/parser';
 
 async function createFile(basePath: string, filePath: string, content: string) {
   const fullPath = join(basePath, filePath);

@@ -11,6 +11,7 @@ export default function Page () {
         <Card title="Home Page">
             <UploadPage />
             <LoginPage />
+            
         </Card>
     );
 }

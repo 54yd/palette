@@ -7,8 +7,8 @@ import RootContainer from './_rootContainer';
 import { Layout, Menu } from 'antd';
 import { Content } from 'antd/lib/layout/layout';
 
-import { AppHeader, AppFooter } from '../containers/OuterParts';
-import NavigationEvents from '@/components/NavigationEvents'
+import { AppHeader, AppFooter } from '@/_components/containers/OuterParts';
+import NavigationEvents from '@/_components/NavigationEvents'
 
 const AppLayout = ({ children }: { children: ReactNode }) => {
     const router = useRouter();

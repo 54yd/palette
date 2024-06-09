@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Row, Col } from 'antd';
-import DropZone from '../components/DropZone';
+import DropZone from '@/_components/DropZone';
 
 const UploadPage = () => {
   return (

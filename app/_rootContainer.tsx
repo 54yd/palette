@@ -1,10 +1,10 @@
 'use client';
 
-import '@/styles/globals.css';
+import '@/_components/styles/globals.css';
 
 import { ReactNode } from 'react';
 import Provider from '@/app/_provider';
-import Transition from '@/containers/Transition';
+import Transition from '@/_components/containers/Transition';
 
 
 const RootContainer = ({ children }: { children: ReactNode }) => {

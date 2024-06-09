@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import { Upload, Button } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
-import { parseText } from '../utils/parser';
-import { saveFiles } from '../utils/fileHandler';
+import { parseText } from './utils/parser';
+import { saveFiles } from './utils/fileHandler';
 
 const DropZone = () => {
   const [parsedData, setParsedData] = useState<Record<string, { path: string, content: string }> | null>(null);
