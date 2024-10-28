@@ -1,11 +1,32 @@
 
+![localhost-3000-upload-10-28-2024_11_13_AM](https://github.com/user-attachments/assets/47d43666-0b13-4199-9038-8100696023ff)
 # 🚀 Project Overview
 
-This project is a web application built with TypeScript using **React**, **Next.js**, and **Prisma** for the backend. It includes features such as authentication, user management, product pages, and file uploads.
+This project is a web application built with TypeScript using **React**, **Next.js**, and **Prisma** for the backend. It includes features such as authentication, user management, product pages. each product page has routed. Product Manupilation API CRUD is also implemented. (**THIS PRJ needs to .env for NEXTAUTH and your CALLBACKURL, and your Database! we recommend use sqlite at first and prismastudio to add record.** ) 
+
+ALSO, FEEL FREE TO USE COMPONENT I CREATED (I PLACED THEM EACH PAGE AS EXAMPLE) 
+
+# 📂 Sample Components (included)
+
+ - Authentication Component
+ - Product List Component
+ - User Profile Component
+ - File Upload Component
+ - Card Component
+ - Beautiful and Clean Animations (at All Page + Each Component)
+
+## 📂SCHEMA
+![prisma_schema_er_diagram](https://github.com/user-attachments/assets/b97600a5-d04e-4d02-a6bb-bebd3a797394)
+
 
 ## 📂 File Structure
 
 ```
+prisma/
+├── migrations/          # 📜 Migration scripts for database changes
+├── schema.prisma        # 📊 Prisma schema defining the database structure
+├── seed/                # 🌱 Seeding data to the database
+└── db/dev.db            # 💾 Local SQLite database for development
 src/
 ├── app/
 │   ├── api/                 # 🛠️ API routes for the backend
@@ -22,11 +43,6 @@ src/
 │   ├── _provider.tsx        # 🏗️ Context providers
 │   ├── _rootContainer.tsx   # 🌳 Root container for the app
 │   └── _html.tsx            # 🌐 HTML structure for the app
-├── prisma/
-│   ├── migrations/          # 📜 Migration scripts for database changes
-│   ├── schema.prisma        # 📊 Prisma schema defining the database structure
-│   ├── seed/                # 🌱 Seeding data to the database
-│   └── db/dev.db            # 💾 Local SQLite database for development
 ├── common/
 │   ├── components/          # 🧩 Reusable UI components (e.g., DropZone)
 │   ├── containers/          # 📦 Containers used for layout and transitions
@@ -55,8 +71,8 @@ To set up and run this project locally:
 2. **Set up Prisma Database**:
    Update the `.env` file with your database connection string, then run the following commands to set up the database:
    ```sh
+   npx prisma generate
    npx prisma migrate dev
-   npx prisma db seed
    ```
 
 3. **Run the Development Server**:
@@ -74,15 +90,6 @@ This project uses the following technologies:
 - **🔷 TypeScript** for type-safe JavaScript development.
 - **🎨 Tailwind CSS** for styling.
 
-## 🤝 Contribution
-
-Want to contribute? Follow these steps:
-
-1. **Fork the repository**.
-2. **Create a new branch** (`git checkout -b feature/YourFeatureName`).
-3. **Commit your changes** (`git commit -m 'Add some feature'`).
-4. **Push to the branch** (`git push origin feature/YourFeatureName`).
-5. **Open a pull request**.
 
 ## 📁 Folder and File Descriptions
 
@@ -95,11 +102,3 @@ Want to contribute? Follow these steps:
 - **`common/`**: Reusable UI components, utilities, and global styles.
   - **Components**: UI elements like `DropZone`.
   - **Utilities**: Helper functions and hooks like `fileCreator` and `useIsMounted`.
-
-## 📜 License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-
-## 📧 Contact
-
-For any inquiries or issues, please contact the project maintainer at [email@example.com].
