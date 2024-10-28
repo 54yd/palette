@@ -1,5 +1,6 @@
 
-![localhost-3000-upload-10-28-2024_11_13_AM](https://github.com/user-attachments/assets/47d43666-0b13-4199-9038-8100696023ff)
+![top](https://github.com/user-attachments/assets/08ae4037-1e31-4d7c-8483-7b0418f40b6c)
+
 # 🚀 Project Overview
 
 This project is a web application built with TypeScript using **React**, **Next.js**, and **Prisma** for the backend. It includes features such as authentication, user management, product pages. each product page has routed. Product Manupilation API CRUD is also implemented. (**THIS PRJ needs to .env for NEXTAUTH and your CALLBACKURL, and your Database! we recommend use sqlite at first and prismastudio to add record.** ) 
@@ -15,8 +16,11 @@ ALSO, FEEL FREE TO USE COMPONENT I CREATED (I PLACED THEM EACH PAGE AS EXAMPLE)
  - Card Component
  - Beautiful and Clean Animations (at All Page + Each Component)
 
-## 📂SCHEMA
-![prisma_schema_er_diagram](https://github.com/user-attachments/assets/b97600a5-d04e-4d02-a6bb-bebd3a797394)
+# 📂SCHEMA
+
+<img src="https://github.com/user-attachments/assets/fa9b851e-489c-4924-a034-cbfe05a3440a" alt="prisma_schema_table" width="300" />
+
+<img src="https://github.com/user-attachments/assets/b97600a5-d04e-4d02-a6bb-bebd3a797394" alt="prisma_schema_er_diagram" width="300" />
 
 
 ## 📂 File Structure
