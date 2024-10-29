@@ -3,6 +3,12 @@
 
 # 🚀 Project Overview
 
+This project is a modern EC website framework. 
+ - (I always start writing code with this.)
+ - It includes Server Schema for EC, And Authentication System (GoogleAccount,AppleAccount,GitHub etc)
+ - Jest Integrated for Testing.
+ - Feel free to use it if you like!
+
 This project is a web application built with TypeScript using **React**, **Next.js**, and **Prisma** for the backend. It includes features such as authentication, user management, product pages. each product page has routed. Product Manupilation API CRUD is also implemented. (**THIS PRJ needs to .env for NEXTAUTH and your CALLBACKURL, and your Database! we recommend use sqlite at first and prismastudio to add record.** ) 
 
 ALSO, FEEL FREE TO USE COMPONENT I CREATED (I PLACED THEM EACH PAGE AS EXAMPLE) 
